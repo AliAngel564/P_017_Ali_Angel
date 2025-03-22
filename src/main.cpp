@@ -19,7 +19,6 @@ int main(){
     float transposeMatrix[3][4];
     int row = 0;
     int column = 0;
-    int trnspsColumn = 0;
 
     cout << "Please fill the following Matrix\n";
     pressAnyKey();
@@ -42,11 +41,11 @@ int main(){
         cout << "\n";
     }
     pressAnyKey();
-    for(trnspsColumn;trnspsColumn<4;trnspsColumn++)
+    for(int j = 0;j<4;j++)
     {
         for(int i=0;i<3;i++)
         {
-            transposeMatrix[i][trnspsColumn] = usrMatrix[row][column];
+            transposeMatrix[i][j] = usrMatrix[row][column];
             column++;
         }
     row+1;
