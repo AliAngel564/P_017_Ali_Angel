@@ -1,7 +1,11 @@
-
-
-
-
+/*
+Amerike University
+Author: Ali Angel
+Work #: 17
+Date: 21/03/25
+Description: This program will ask the user to fill a 4 by 3 
+matrix and it will then transpose it and show it as a 3 by 4 matrix 
+*/
 
 #include <iostream>
 #include <conio.h>
@@ -11,15 +15,15 @@ using namespace std;
 void pressAnyKey();
 
 int main(){
-    float usrMatrix[3][3];
-    float transposeMatrix[3][3];
-    int row = 2;
+    float usrMatrix[4][3];
+    float transposeMatrix[3][4];
+    int row = 0;
     int column = 0;
-    int trnspsColumn = 2;
+    int trnspsColumn = 0;
 
     cout << "Please fill the following Matrix\n";
     pressAnyKey();
-    for(int i=0;i<3;i++)
+    for(int i=0;i<4;i++)
     {
         for(int j=0;j<3;j++)
         {
@@ -29,7 +33,7 @@ int main(){
     }
     pressAnyKey();
     cout << "Your matrix looks like this righ now\n";
-    for(int i=0;i<3;i++)
+    for(int i=0;i<4;i++)
     {
         for(int j=0;j<3;j++)
         {
@@ -38,27 +42,26 @@ int main(){
         cout << "\n";
     }
     pressAnyKey();
-    
-    for(int trnspsColumn;trnspsColumn<0;trnspsColumn-1)
+    for(trnspsColumn;trnspsColumn<4;trnspsColumn++)
     {
         for(int i=0;i<3;i++)
         {
             transposeMatrix[i][trnspsColumn] = usrMatrix[row][column];
             column++;
         }
-    row-1;
+    row+1;
     }
-    
-    for(int trnspsColumn=2;trnspsColumn==0;trnspsColumn)
+    cout << "This is your transposed matrix\n";
+    for(int i=0;i<3;i++)
     {
-        for(int i=0;i<3;i++)
+        for(int j=0;j<4;j++)
         {
-        cout<< transposeMatrix[i][trnspsColumn] << "\n";       
+            cout << "[" << transposeMatrix[i][j] << "]";
         }
+        cout << "\n";
     }
     return 0;
 }
-
 void pressAnyKey()
 {
     cout << "\nPRESS ANY KEY TO CONTINUE\n";
